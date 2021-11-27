@@ -1,0 +1,236 @@
+
+<!DOCTYPE HTML>
+<html class="no-js">
+<!-- Mirrored from html.imithemes.com/nativechurch/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Nov 2016 06:05:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Basic Page Needs
+  ================================================== -->
+   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>USTECH</title>
+ <!-- <meta name="keywords" content="" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut" href="images/aluta-continua2.png" />
+  -->
+  
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!-- CSS
+  ================================================== -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="plugins/mediaelement/mediaelementplayer.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="css/ie8.css" media="screen" /><![endif]-->
+<!-- Color Style -->
+<link class="alt" href="colors/color1.css" rel="stylesheet" type="text/css">
+<link href="style-switcher/css/style-switcher.css" rel="stylesheet" type="text/css">
+<!-- SCRIPTS
+  ================================================== -->
+<script src="js/modernizr.js"></script><!-- Modernizr -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=403202216515066";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</head>
+<body>
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+<div class="body"> 
+  <!-- Start Site Header -->
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-8">
+            <h1 class="logo" > <a  href="index.php"><img src="images/USTECH.PNG" alt="USTECH"></a> </h1>
+          </div>
+          <div class="col-md-8 col-sm-6 col-xs-4">
+            <ul class="top-navigation ">
+            </ul>
+            <a href="#" class="visible-sm visible-xs menu-toggle"><i class="fa fa-bars"></i></a> </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-menu-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navigation">
+              <ul class="sf-menu" style="background-color:">
+                <li><a href="index.php">Home</a>
+                 </li>
+                <li><a>About Us</a>
+				          <ul class="dropdown">
+                                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="our-excos.php">Executives</a></li>
+                  </ul>
+                </li>
+				        <!-- <li><a href="programmes.php">Programmes</a>
+                </li>
+                 <li><a href="events.php">Events</a>
+                  
+                </li>
+                <li><a href="news-updates.php">News Update</a>
+                </li>
+                <li><a href="gallery.php">Gallery</a>
+                </li> -->
+                <li><a href="contact.php">Contact Us</a> </li>
+				</ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<!-- End Site Header --> 
+  <!-- Start Hero Slider -->
+  <div class="hero-slider flexslider clearfix" data-autoplay="yes" 
+  data-pagination="yes" data-arrows="yes" data-style="fade" data-pause="yes">
+    <ul class="slides">
+        
+      <li class=" parallax" style="background-image:url(uploads/slider/ustech.jpg)"></li>
+                                
+    </ul>
+  </div>
+  <!-- End Hero Slider --> 
+  <!-- Start Notice Bar -->
+  <div class="notice-bar" style="background-color:black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6 notice-bar-title"> <span class="notice-bar-title-icon hidden-xs">
+          <i class="fa fa-calendar fa-3x"></i></span> <span class="title-note">Next</span > <strong style="color:white">Upcoming Event</strong> </div>
+        <?php
+				$result = $db->prepare("SELECT * FROM events ORDER BY id DESC Limit 1");
+				$result->execute();
+				for($i=0; $row = $result->fetch(); $i++){   
+               ?> 
+		<div class="col-md-3 col-sm-6 col-xs-6 notice-bar-event-title">
+          <h5><a href="event-detail.php?id=<?php echo $row['id'];?>" style="color:white"><?php echo $row['title']; ?></a></h5>
+          <span class="meta-data" style="color:white"><?php echo $row['venue']; ?></span> </div>
+        <div id="counter" class="col-md-4 col-sm-6 col-xs-12 counter" data-date="July 13, 2016">
+          <div class=""> <span style="color:white" ><?php echo $row['date']; ?></span> </div>
+          
+        
+		</div>
+		<?php } ?>
+        <div class="col-md-2 col-sm-6 hidden-xs"> <a href="events.php" class="btn btn-primary btn-lg btn-block">All Events</a> </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Notice Bar --> 
+  <!-- Start Content -->
+  <div class="main" role="main">
+    <div id="content" class="content full">
+      <div class="container">
+        <div class="row"> 
+          <!-- Start Featured Blocks -->
+          
+          <!-- End Featured Blocks --> 
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-sm-6"> 
+            <!-- Events Listing -->
+            <div class="listing events-listing" >
+              <header class="listing-header">
+                <h3 class=" titles">Welcome to SUG News Portal</h3>
+              </header>
+			  <?php
+				$result = $db->prepare("SELECT * FROM welcome");
+				$result->execute();
+				for($i=0; $row = $result->fetch(); $i++){
+				?>  
+<?php echo $row['body']; ?>             
+			  <?php } ?>
+            </div>
+            <div class="spacer-30"></div>
+            <!-- Latest News -->
+            <div class="listing post-listing" >
+              <header class="listing-header">
+                <h3 class="titles">Latest News</h3></header>
+              <section class="listing-cont" >
+                <ul>
+				<li class="item post">
+                    <div class="row" >
+                      <div class="col-md-12">
+					  <?php
+				$result = $db->prepare("SELECT * FROM news ORDER BY id DESC Limit 3");
+				$result->execute();
+				for($i=0; $row = $result->fetch(); $i++){   
+               ?> 
+                        <div class="post-title">
+                          <h2 class=" titles" style=""><a href="news_post.php?id=<?php echo $row['id'];?>"><?php echo $row['news_title']; ?></a></h2>
+                          <span class="meta-data" style="background-color:black"><i class="fa fa-calendar"></i> on <?php echo $row['date']; ?></span>
+						 <p><?php echo strip_tags(substr($row['news_detail'],0,180)) ;?>...</p>
+						 </div>
+						<?php } ?>
+                      </div>
+                    </div>
+					 <center> -- <a href="news-updates.php">All News</a> --</center>
+                  </li>
+                </ul>
+              </section>
+			 </div>
+          </div>
+          <!-- Start Sidebar -->
+          <div class="col-md-4 col-sm-6">
+
+
+            <!-- Side-bar -->
+            <div class="listing sermons-listing">
+              <header class="listing-header">
+              </header>
+              <section class="listing-cont">
+                <ul>
+                  <li class="item sermon featured-sermon"> <span class="date"></span>
+                    <h4><a href="#">Like Us on Facebook</a></h4>
+					<?php
+                            //include('../connect.php');
+				$result = $db->prepare("SELECT * FROM settings");
+				$result->execute();
+				for($i=0; $row = $result->fetch(); $i++){
+               ?> 
+                    <div class="featured-sermon-video">
+                      <!--Facebook Page-->
+                      <iframe src="" width="214" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+								</div> <?php } ?>
+                  </li>
+                  
+				   <li class="item post">
+                    <div class="row">
+                      <div class="col-md-12"> <a href="gallery.php" class="media-box"> <img src="images/gallery.jpg" alt="" class="img-thumbnail"> </a></div>
+                     </div>
+                  </li>
+                 </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Start Featured Gallery -->
+  <div class="featured-gallery" style="background-color:black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <h4>Updates from our gallery</h4>
+          <a href="gallery.php" class="btn btn-default btn-lg">More Galleries</a> </div>
+		  <?php
+				$result = $db->prepare("SELECT * FROM gallery ORDER BY id DESC Limit 3");
+				$result->execute();
+				for($i=0; $row = $result->fetch(); $i++){   
+               ?> 
+        <div class="col-md-3 col-sm-3 post format-image"> <a href="uploads/<?php echo $row['file'];?>" class="media-box" data-rel="prettyPhoto[Gallery]"> <img src="uploads/<?php echo $row['file'];?>" alt=""> </a> </div>
+        <?php } ?>
+		</div>
+    </div>
+  </div>
+  <!-- End Featured Gallery --> 
+  <!-- Start Footer -->
+  <?php include "footer.php"; ?>
